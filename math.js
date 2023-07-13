@@ -9,7 +9,7 @@ console.log({
   perimetroCuadrado,
   areaCuardrado,
 });
-console.groupEnd();
+console.groupEnd("Cuadrados");
 
 console.group("Triangulos");
 const ladoTriangulo1 = 6;
@@ -27,4 +27,4 @@ console.log({
   perimetroTriangulo,
   areaTriangulo,
 });
-console.groupEnd();
+console.groupEnd("Triangulos");
