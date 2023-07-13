@@ -28,3 +28,30 @@ console.log({
   areaTriangulo,
 });
 console.groupEnd("Triangulos");
+
+console.group("Circulos");
+const radioCirculo = 4;
+const diametroCirculo = radioCirculo * 2;
+const PI = Math.PI;
+const perimetroCirculo = diametroCirculo * PI;
+// const areaCirculo = PI * (radioCirculo * radioCirculo);
+const areaCirculo = PI * radioCirculo ** 2; // ** es para elevar a la potencia
+
+console.log({
+  radioCirculo,
+  diametroCirculo,
+  PI,
+  perimetroCirculo,
+  areaCirculo,
+});
+
+function calcularCirculo(radio) {
+  //   const radioAlCuadrado = radio ** 2;
+  const radioAlCuadrado = Math.pow(radio, 2); // usando math
+  return {
+    circunferencia: radio * 2 * PI,
+    area: PI * radioAlCuadrado,
+  };
+}
+
+console.groupEnd("Circulos");
