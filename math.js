@@ -27,6 +27,29 @@ console.log({
   perimetroTriangulo,
   areaTriangulo,
 });
+
+function calcularAlturaTriangulo(ladosEquivalentes, base) {
+  if (ladosEquivalentes === base) {
+    console.warn("Esto no es un triangulo isoseles!");
+  } else {
+    const altura = Math.sqrt(ladosEquivalentes ** 2 - base ** 2 / 4);
+    return altura;
+  }
+}
+
+function cualcularAlturaTrianguloEscaleno(lado1, lado2, lado3) {
+  const perimetro = lado1 + lado2 + lado3;
+  const altura =
+    (2 / lado1) *
+    Math.sqrt(
+      perimetro *
+        (perimetro - lado1) *
+        (perimetro - lado2) *
+        (perimetro - lado3)
+    );
+  return altura;
+}
+
 console.groupEnd("Triangulos");
 
 console.group("Circulos");
