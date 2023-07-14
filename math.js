@@ -80,6 +80,10 @@ function calcularCirculo(radio) {
 console.groupEnd("Circulos");
 
 function calcularDescuento(precio, descuento) {
+  if (descuento >= 100) {
+    alert("El descuento no puede ser mayor o igual a 100%");
+    return;
+  }
   const porcentajePrecioConDescuento = 100 - descuento;
   const precioConDescuento = (precio * porcentajePrecioConDescuento) / 100;
   return precioConDescuento;
@@ -87,13 +91,23 @@ function calcularDescuento(precio, descuento) {
 
 function onClickButtonPriceDiscount() {
   const inputPrice = document.getElementById("InputPrice");
-  const priceValue = inputPrice.value;
   const inputDiscount = document.getElementById("InputDiscount");
+  const resultP = document.getElementById("ResultP");
+
+  const priceValue = inputPrice.value;
   const discountValue = inputDiscount.value;
+
+  if (!priceValue || !discountValue) {
+    alert("Por favor ingrese los valores");
+    return;
+  }
 
   const precioConDescuento = calcularDescuento(priceValue, discountValue);
 
-  const resultP = document.getElementById("ResultP");
+  if (!precioConDescuento) {
+    return;
+  }
+
   resultP.innerText = `El precio con descuento son: $${precioConDescuento}`;
 }
 
