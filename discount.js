@@ -55,3 +55,7 @@ document.getElementById("buttonCalcular").addEventListener("click", (event) => {
   event.preventDefault();
   onClickButtonPriceDiscount();
 });
+
+// SMALL COMMENTS ON CLASS
+// Array.prototype.find() devuelve un elemento del array que cumpla con la condición dada.
+// Array.prototype.filter() devuelve un array con los elementos que cumplan con la condición dada.
