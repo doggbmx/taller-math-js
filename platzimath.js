@@ -21,3 +21,20 @@ function arrayIsOdd(array) {
   }
   return false;
 }
+
+function calcularMediana(array) {
+  // deberia ordenar el orden de la lista
+  array.sort((a, b) => a - b);
+  // ahora ordenada puedo seguir con la operacion
+  const listaEsPar = arrayIsOdd(array);
+  if (listaEsPar) {
+    const indexPar1 = array.length / 2;
+    const indexPar2 = array.length / 2 - 1;
+
+    const listaMitades = [array[indexPar1], array[indexPar2]];
+    calcularPromedio(listaMitades);
+  } else {
+    const numeroImpar = Math.floor(array.length / 2) + 1;
+    return array[numeroImpar - 1];
+  }
+}
