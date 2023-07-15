@@ -17,24 +17,40 @@ function calcularPromedio(array) {
 
 function arrayIsOdd(array) {
   if (array.length % 2) {
-    return true;
+    return false;
   }
-  return false;
+  return true;
 }
 
 function calcularMediana(array) {
   // deberia ordenar el orden de la lista
-  array.sort((a, b) => a - b);
+  const listaOrdenada = array.sort((a, b) => a - b);
   // ahora ordenada puedo seguir con la operacion
   const listaEsPar = arrayIsOdd(array);
   if (listaEsPar) {
-    const indexPar1 = array.length / 2;
-    const indexPar2 = array.length / 2 - 1;
+    const indexPar1 = listaOrdenada.length / 2 - 1;
+    const indexPar2 = listaOrdenada.length / 2;
+    const listaMitades = [];
+    listaMitades.push(listaOrdenada[indexPar1]);
+    listaMitades.push(listaOrdenada[indexPar2]);
 
-    const listaMitades = [array[indexPar1], array[indexPar2]];
-    calcularPromedio(listaMitades);
+    const medianaListaPar = calcularPromedio(listaMitades);
+    return medianaListaPar;
   } else {
-    const numeroImpar = Math.floor(array.length / 2) + 1;
-    return array[numeroImpar - 1];
+    const indexMitadListaImpar = Math.floor(array.length / 2);
+    const medianaListaImpar = listaOrdenada[indexMitadListaImpar];
+    return medianaListaImpar;
   }
 }
+
+// SORT METHOD
+// if (a > b) {
+//     // en este caso el orden es ascendente
+//   return 1;
+// } else if (a == b) {
+//     // en este caso el orden es igual
+//   return 0;
+// } else if (a < b) {
+//     // en este caso el orden es descendente
+//   return -1;
+// }
