@@ -1,4 +1,6 @@
-function calcularPromedio(array) {
+const PlatziMath = {};
+
+PlatziMath.calcularPromedio = function calcularPromedio(array) {
   // sumar todos los elementos del array y dividir por la cantidad de elementos
   //   let sumaElementos;
   //   for (let i = 0; i < array.length; i++) {
@@ -13,9 +15,9 @@ function calcularPromedio(array) {
   });
 
   return sumaElementos / array.length;
-}
+};
 
-function calcularModa(array) {
+PlatziMath.calcularModa = function calcularModa(array) {
   const listaCount = {};
 
   //   for (let i = 0; i < array.length; i++) {
@@ -40,16 +42,16 @@ function calcularModa(array) {
 
   const moda = `La moda es: ${listaOrdenadaMaxNumber[0]}, y aparecio ${listaOrdenadaMaxNumber[1]} veces`;
   return moda;
-}
+};
 
-function arrayIsOdd(array) {
+PlatziMath.arrayIsOdd = function arrayIsOdd(array) {
   if (array.length % 2) {
     return false;
   }
   return true;
-}
+};
 
-function calcularMediana(array) {
+PlatziMath.calcularMediana = function calcularMediana(array) {
   // deberia ordenar el orden de la lista
   const listaOrdenada = array.sort((a, b) => a - b);
   // ahora ordenada puedo seguir con la operacion
@@ -68,7 +70,7 @@ function calcularMediana(array) {
     const medianaListaImpar = listaOrdenada[indexMitadListaImpar];
     return medianaListaImpar;
   }
-}
+};
 
 // SORT METHOD
 // if (a > b) {
