@@ -15,6 +15,27 @@ function calcularPromedio(array) {
   return sumaElementos / array.length;
 }
 
+function calcularModa(array) {
+  const listaCount = {};
+
+  //   for (let i = 0; i < array.length; i++) {
+  //     if (listaCount[array[i]]) {
+  //       listaCount[array[i]] += 1;
+  //     } else {
+  //       listaCount[array[i]] = 1;
+  //     }
+  //   }
+
+  // vamos a chupetear el codigo de arriba
+
+  array.forEach((elemento) =>
+    !listaCount[elemento]
+      ? (listaCount[elemento] = 1)
+      : (listaCount[elemento] += 1)
+  );
+  console.log(listaCount);
+}
+
 function arrayIsOdd(array) {
   if (array.length % 2) {
     return false;
