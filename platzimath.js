@@ -34,6 +34,12 @@ function calcularModa(array) {
       : (listaCount[elemento] += 1)
   );
   console.log(listaCount);
+
+  const listaArray = Object.entries(listaCount).sort((a, b) => a[1] - b[1]);
+  const listaOrdenadaMaxNumber = listaArray[listaArray.length - 1];
+
+  const moda = `La moda es: ${listaOrdenadaMaxNumber[0]}, y aparecio ${listaOrdenadaMaxNumber[1]} veces`;
+  return moda;
 }
 
 function arrayIsOdd(array) {
