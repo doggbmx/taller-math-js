@@ -55,7 +55,7 @@ PlatziMath.calcularMediana = function calcularMediana(array) {
   // deberia ordenar el orden de la lista
   const listaOrdenada = array.sort((a, b) => a - b);
   // ahora ordenada puedo seguir con la operacion
-  const listaEsPar = arrayIsOdd(array);
+  const listaEsPar = PlatziMath.arrayIsOdd(array);
   if (listaEsPar) {
     const indexPar1 = listaOrdenada.length / 2 - 1;
     const indexPar2 = listaOrdenada.length / 2;
@@ -63,7 +63,7 @@ PlatziMath.calcularMediana = function calcularMediana(array) {
     listaMitades.push(listaOrdenada[indexPar1]);
     listaMitades.push(listaOrdenada[indexPar2]);
 
-    const medianaListaPar = calcularPromedio(listaMitades);
+    const medianaListaPar = PlatziMath.calcularPromedio(listaMitades);
     return medianaListaPar;
   } else {
     const indexMitadListaImpar = Math.floor(array.length / 2);
