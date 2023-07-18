@@ -42,3 +42,34 @@ function proyeccionPorPersona(nombrePersona) {
   const nuevoSalario = ultimoSalario + aumento;
   return nuevoSalario;
 }
+
+let empresas = {};
+
+// for (persona of salarios) {
+//   for (trabajo of persona.trabajos) {
+//     if (!empresas[trabajo.empresa]) {
+//       empresas[trabajo.empresa] = {};
+//     }
+
+//     if (!empresas[trabajo.empresa][trabajo.year]) {
+//       empresas[trabajo.empresa][trabajo.year] = [];
+//     }
+
+//     empresas[trabajo.empresa][trabajo.year].push(trabajo.salario);
+//   }
+// }
+// console.log(empresas);
+// vamos a chupetear el codigo de arriba
+
+empresas = salarios.map((persona) => {
+  persona.trabajos.forEach((item) => {
+    if (!empresas[item.empresa]) {
+      empresas[item.empresa] = {};
+    }
+    if (!empresas[item.empresa][item.year]) {
+      empresas[item.empresa][item.year] = [];
+    }
+    empresas[item.empresa][item.year].push(item.salario);
+    console.log(`===> ${JSON.stringify(empresas)}`);
+  });
+});
